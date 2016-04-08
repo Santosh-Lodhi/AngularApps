@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title> Panel Demo</title>
+	<link rel="stylesheet" type="text/css" href="css/panel.css" media="all">
+	
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="js/panel.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var p = new panel(400, 400, $('#test-div'));
+			var p2 = new panel(400, 400);			
+			p.add("<h1>HELLO WORLD!</h1>");		
+				
+			p.open(function(){
+				var d = document.createElement('p');
+				d.innerHTML = "M dood to have this example ... etc";
+				p2.add(d);
+				p2.open();
+			});
+		});
+
+		
+
+	</script>
+</head>
+<body>
+	<div id="test-div" style="width:750px; height:600px; position:relative; margin:150px; background:#DDD">	</div>
+</body>
+</html>

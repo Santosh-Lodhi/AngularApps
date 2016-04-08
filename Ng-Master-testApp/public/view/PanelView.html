@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	$(function(){
+		var p = new panel(800, 600, $('#test-div'));
+		var p2 = new panel(800, 600);			
+		p.add("<header>	<h1>HELLO WORLD ! </h1></header>");
+		p.open(function(){
+			var d = document.createElement('p');
+			d.innerHTML = "M dood to have this example";
+			p2.add(d);
+			p2.open();
+		});
+	});
+</script>
+<div id="test-div" style="width:100%; height:100%; position:relative; margin:0px; background:#DDD">	</div>

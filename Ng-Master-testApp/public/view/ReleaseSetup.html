@@ -1,0 +1,64 @@
+﻿<div class="tableDiv">
+	<div class="scrollable-area">
+	    <table class="table table-striped" showborder="true">
+	    <thead bgcolor="#f8f8f8">
+	      <tr>
+	        <th>S.No.</th>
+	        <th>Release Name</th>
+	        <th>Releae Description</th>
+	        <th>Start Date</th>
+	        <th>End Date</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr ng-repeat="release in items">
+	        <td>{{$index + 1}}</td>
+	        <td>{{release.name}}</td>
+	        <td>{{release.description}}</td>
+	        <td>{{release.start_date}}</td>
+	        <td>{{release.end_date}}</td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+</div>
+<div class="formDiv">
+	<form id="register" class="form-horizontal ws-validate">
+		<h1>Release Setup</h1>
+	  <fieldset> 
+	    <legend></legend> 
+	    <div class="form-group"> 
+	        <label class="control-label">Name :</label>
+	        <input class="form-control" id="given-name" name="given-name" type="text" placeholder="Release name only" required autofocus> 
+			
+	        <div class="checkbox">
+	            <label><input type="checkbox" required="" />Hide</label>
+	        </div>
+	    </div>
+	    <div class="form-group"> 
+	    	<label class="control-label">Start Date</label>
+	        <input class="form-control" id="startDate" name="startDate" type="date" required>
+			
+			<label class="control-label">End Date</label>
+	        <input class="form-control" id="endDate" name="endDate" type="date" required>
+			
+	    </div> 
+	   	<div class="form-group"> 
+	        <label class="control-label">Description</label>  
+	       	<textarea class="form-control" id="description" name="description" rows=5 required></textarea>
+	    </div> 
+	    <div class="form-group"> 
+	        <label class="control-label">Map External Defect Project</label> 
+	        <select class="form-control" name="depSelectBox" data-ng-model="selectedOption"
+	       		 data-ng-options="proj.name group by proj.type for proj in projects">               
+	    	</select>
+			
+	    </div> 
+	  	<div class="form-group">
+	        <button type="submit" class="btn btn-primary">submit</button>
+	    </div>
+	    </fieldset>
+	   
+	</form>
+
+</div>

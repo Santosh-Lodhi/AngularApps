@@ -1,0 +1,31 @@
+<div class="scrollable-area">
+   <!-- <div ng-controller="Controller1">
+      <div my-customer></div>  directiv
+    </div> -->
+   
+  <!-- <input type="text">{{users[0].username}}</input> -->
+    <table class="table table-striped" showborder="true">
+    <thead bgcolor="#f8f8f8">
+      <tr>
+        <th>S.No.</th>
+        <th>User Name</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+		    <th>City</th>
+        <th>Country</th>
+        <th>e-Mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in items">
+        <td>{{$index + 1}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+		    <td>{{user.city}}</td>
+        <td>{{user.country}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

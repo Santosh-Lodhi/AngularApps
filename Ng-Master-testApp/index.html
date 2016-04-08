@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+	<title> Test-App </title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+ 
+  <link rel="stylesheet" href="css/simple-sidebar.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/panel.css" media="all">
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/panel.js"></script>
+
+</head>
+<body ng-app="TestApp" ng-controller="DataController">
+
+<!-- HEADER AND NAVBAR -->
+<header class="header">
+    <nav class="navbar navbar-default">
+      <div class="desktop-position"><p><h4>{{selectedOption.name}} </h4>Test's Desktop</p></div>      
+      <div class="header-name">
+        <h1>Test App</h1>
+      </div>
+    </nav>
+</header>
+
+<nav class="dropdownmenu">
+  <ul>
+    <li><a href="#" ng-click="testcases(selectedOption.name)">Home</a></li>
+    <li><a href="#" ng-click="users()">About Me</a></li>
+    <li><a href="#" ng-click="showPanel()">Services</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</nav>
+
+ <!-- Sidebar -->
+<div id="sidebar-wrapper">
+  <!-- Select Box  -->
+  <div class="select-dropdown">
+    <select name="depSelectBox" class="select-menu" data-ng-model="selectedOption"
+        data-ng-options="proj.name group by proj.type for proj in projects">                
+    </select>
+  </div>
+  <!-- Select Box  -->
+
+  <!---->
+  <ul class="sidebar-nav"  data-ng-controller="sidebarController">
+    <li data-ng-repeat="page in pages">
+        <a href="{{href}}" data-ng-click="loadPage(page)">{{ page.title }}</a>
+    </li>
+  </ul>    
+</div>
+<!-- /#sidebar-wrapper -->
+  <div id="section" class="container">    
+    <ng-view></ng-view>
+ </div>
+   
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/app.js"></script>  
+  <script src="js/controllers.js"></script>
+  <!--<script src="app/routes/index.js"></script>-->
+  
+  <!-- jQuery library -->
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
+
+ 
+  
+  <div id="footer">
+    Email :- santoshsinghlodhi@gmail.com
+  </div>
+</body>
+</html>

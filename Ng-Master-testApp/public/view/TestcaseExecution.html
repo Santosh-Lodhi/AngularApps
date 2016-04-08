@@ -1,0 +1,34 @@
+<form id="register">
+<h1>Testcase Execution</h1>
+  <fieldset> 
+    <legend></legend> 
+    <div> 
+        <label>Name :
+        <input id="given-name" name="given-name" type="text" placeholder="Release name only" required autofocus> 
+		</label>
+        <input id="hide" name="releasetype" type="checkBox"> 
+        <label for="hide">Hide</label>
+    </div>
+    <div> 
+    	<label>Start Date
+        <input id="startDate" name="startDate" type="date" required>
+		</label>
+		<label>End Date
+        <input id="endDate" name="endDate" type="date" required>
+		</label>
+    </div> 
+   	<div> 
+        <label>Description</label>  
+       	<textarea class="textArea" id="description" name="description" rows=5 required></textarea>
+    </div> 
+    <div> 
+        <label>Map External Defect Project</label> 
+        <select class="select" name="depSelectBox" data-ng-model="selectedOption"
+       		 data-ng-options="proj.name group by proj.type for proj in projects">               
+    	</select>
+		
+    </div> 
+  	<button class="btn btn-primary" data-ng-click="addRelease()">Add Releas</button>
+    </fieldset>
+   
+</form>

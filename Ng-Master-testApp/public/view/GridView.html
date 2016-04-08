@@ -1,0 +1,20 @@
+<div class="scrollable-area">
+    <table class="table table-striped" showborder="true">
+    <thead bgcolor="#f8f8f8">
+      <tr>
+        <th>S.No.</th>
+        <th>Testcase Id</th>
+        <th>Testcase Name</th>
+        <th>Created Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="testcase in items">
+        <td>{{$index + 1}}</td>
+        <td>{{testcase.id}}</td>
+        <td>{{testcase.name}}</td>
+        <td>{{testcase.creation_date}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
